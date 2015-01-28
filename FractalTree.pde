@@ -1,20 +1,20 @@
 public int initLength;
 public int treeSize;
 public void setup() 
-{   
-	size(640,480);
-        initLength = 100;
-        treeSize = 8;
+{
+  size(640,480);
+  initLength = 100;
+  treeSize = 8;
 } 
 public void draw() 
 {   
-	background(255);   
-	stroke(0);
-        strokeWeight(treeSize);
-        fill(40, 200, 20);
-        initLength = (int)map(mouseY, 0, height, 100, 80);
-	line(320,480,320,480-initLength);
-	drawBranches(320,480-initLength,initLength,-90,90*(float)mouseY/(float)height,(float)mouseX/(float)width,0.8,treeSize);
+  background(255);   
+  stroke(90,55,15);`
+  strokeWeight(treeSize);
+  fill(40, 200, 20);
+  initLength = (int)map(mouseY, 0, height, 100, 80);
+  line(320,480,320,480-initLength);
+  drawBranches(320,480-initLength,initLength,-90,90*(float)mouseY/(float)height,(float)mouseX/(float)width,0.8,treeSize);
 } 
 public void drawBranches(int x,int y, double branchCount, double angle,
 double split, double weighting,
