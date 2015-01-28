@@ -9,7 +9,7 @@ public void setup()
 public void draw() 
 {   
   background(255);   
-  stroke(90,55,15);`
+  stroke(90,55,15);
   strokeWeight(treeSize);
   fill(40, 200, 20);
   initLength = (int)map(mouseY, 0, height, 100, 80);
