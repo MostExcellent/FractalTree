@@ -8,10 +8,9 @@ public void setup()
 } 
 public void draw() 
 {   
-  background(255);   
+  background(255); 
   stroke(90,55,15);
   strokeWeight(treeSize);
-  fill(40, 200, 20);
   initLength = (int)map(mouseY, 0, height, 100, 80);
   line(320,480,320,480-initLength);
   drawBranches(320,480-initLength,initLength,-90,90*(float)mouseY/(float)height,(float)mouseX/(float)width,0.8,treeSize);
@@ -27,6 +26,7 @@ double fractionLength, int smallestBranch)
   int endX2 = (int)(branchCount*fractionLength*Math.cos(Math.toRadians(angle2)) + x);
   int endY2 = (int)(branchCount*fractionLength*Math.sin(Math.toRadians(angle2)) + y);
   if(smallestBranch != 0){
+    stroke(90,55,15);
     strokeWeight(smallestBranch);
     line(x,y,endX1,endY1);
     line(x,y,endX2,endY2);
@@ -34,6 +34,7 @@ double fractionLength, int smallestBranch)
     drawBranches(endX2,endY2,branchCount*fractionLength,angle2,split,weighting,fractionLength,smallestBranch-1);
   }else{
     strokeWeight(1);
+    fill(40, 200, 20);
     triangle(x,y,endX1,endY1,endX2,endY2);
   }
 }
